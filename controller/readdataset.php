@@ -2,6 +2,7 @@
     require "Classes/PHPExcel/IOFactory.php";
     include "connection.php";
 
+    $nip = $_POST['nip'];
     $inputfilename = $_FILES['file']['tmp_name'];
     $exceldata = array();
 

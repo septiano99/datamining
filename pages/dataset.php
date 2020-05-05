@@ -75,7 +75,7 @@
         <section class="content">
             <form method="post" enctype="multipart/form-data" action="../controller/readdataset.php?nip=<?php echo $_GET['nip']; ?>">
                 Pilih File:
-                <input name="filepegawai" type="file" required="required" accept=".xls,.xlsx">
+                <input name="file" type="file" required="required" accept=".xls,.xlsx">
                 <input name="upload" type="submit" value="Import">
             </form>
         </section>

@@ -13,13 +13,13 @@
 
     if (in_array($_FILES["file"]["type"], $allowedFileType)) {
 
-        $targetPath = '../upload/' . $_FILES['file']['name'];
-        move_uploaded_file($_FILES["file"]["type"], $targetPath);
+        $target = basename($_FILES['file']['name']) ;
+        move_uploaded_file($_FILES['file']['tmp_name'], $target);
 
         // beri permisi agar file xls dapat di baca
-        chmod($_FILES["file"]["type"],0777);
+        chmod($_FILES["file"]["name"],0777);
 
-        $data = new Spreadsheet_Excel_Reader($_FILES["file"]["type"]);
+        $data = new Spreadsheet_Excel_Reader($_FILES["file"]["name"]);
         $totalRow = $data->rowcount($sheet_index=0);
 
         $sql = "DELETE FROM t_dataset";

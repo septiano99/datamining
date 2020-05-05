@@ -31,13 +31,28 @@
 //        $result = pg_query($sql);
     }
 
-echo "<table>";
+    $sql = "DELETE FROM t_dataset";
+    $result = pg_query($sql);
+
+    echo "<table>";
     foreach ($exceldata as $index => $excelraw) {
+        $data = array();
+
         echo "<tr>";
         foreach ($excelraw as $excelcolumn) {
+            array_push($data, $excelcolumn);
             echo "<td>" . $excelcolumn . "</td>";
         }
         echo "</tr>";
+
+        $sql = "INSERT INTO t_dataset (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
+                    plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgk_bunga, tgl_tgk_pokok, tgl_tgk_bunga,
+                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
+                    ($data[0], '$data[1]', '$data[2]', $data[3], '$data[4]', '$data[5]', $data[6],
+                    $data[7], $data[8], $data[9], $data[10], $data[11], $data[12], $data[13], '$data[14]', '$data[15]',
+                    $data[16], $data[17], $data[18], $data[19], $data[20], '$data[21]', $data[22])";
+
+        $result = pg_query($sql);
     }
     echo "</table>";
 

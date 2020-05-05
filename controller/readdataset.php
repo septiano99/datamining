@@ -17,7 +17,7 @@
     $highestRow = $sheet->getHighestRow();
     $highestColumn = $sheet->getHighestColumn();
 
-    for ($row = 1; $row <= $highestRow; $row++) {
+    for ($row = 2; $row <= $highestRow; $row++) {
         $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
         $exceldata[] = $rowData[0];
 

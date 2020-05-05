@@ -19,7 +19,7 @@
         // beri permisi agar file xls dapat di baca
         chmod($_FILES["file"]["name"],0777);
 
-        $data = new Spreadsheet_Excel_Reader($_FILES["file"]["name"]);
+        $data = new Spreadsheet_Excel_Reader($_FILES['file']['name'], false);
         $totalRow = $data->rowcount($sheet_index=0);
 
         $sql = "DELETE FROM t_dataset";

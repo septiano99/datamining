@@ -19,16 +19,27 @@
 
     for ($row = 1; $row <= $highestRow; $row++) {
         $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
+        $exceldata[] = $rowData[0];
 
-        $sql = "INSERT INTO t_dataset (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
-                    plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgk_bunga, tgl_tgk_pokok, tgl_tgk_bunga,
-                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
-                    ($rowData[0][0], '$rowData[0][1]', '$rowData[0][2]', $rowData[0][3], '$rowData[0][4]', '$rowData[0][5]', $rowData[0][6],
-                    $rowData[0][7], $rowData[0][8], $rowData[0][9], $rowData[0][10], $rowData[0][11], $rowData[0][12], $rowData[0][13], '$rowData[0][14]', '$rowData[0][15]',
-                    $rowData[0][16], $rowData[0][17], $rowData[0][18], $rowData[0][19], $rowData[0][20], '$rowData[0][21]', $rowData[0][22])";
-
-        $result = pg_query($sql);
+//        $sql = "INSERT INTO t_dataset (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
+//                    plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgk_bunga, tgl_tgk_pokok, tgl_tgk_bunga,
+//                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
+//                    ($rowData[0][0], '$rowData[0][1]', '$rowData[0][2]', $rowData[0][3], '$rowData[0][4]', '$rowData[0][5]', $rowData[0][6],
+//                    $rowData[0][7], $rowData[0][8], $rowData[0][9], $rowData[0][10], $rowData[0][11], $rowData[0][12], $rowData[0][13], '$rowData[0][14]', '$rowData[0][15]',
+//                    $rowData[0][16], $rowData[0][17], $rowData[0][18], $rowData[0][19], $rowData[0][20], '$rowData[0][21]', $rowData[0][22])";
+//
+//        $result = pg_query($sql);
     }
+
+echo "<table>";
+    foreach ($exceldata as $index -> $excelraw) {
+        echo "<tr>";
+        foreach ($excelraw as $excelcolumn) {
+            echo "<td>" . $excelcolumn . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
 
 //    $excel = PHPExcel_IOFactory::load('Data Ano clean.xlsx');
 //    $excel->setActiveSheetIndex(0);

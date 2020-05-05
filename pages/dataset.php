@@ -66,7 +66,7 @@
         </section>
     </aside>
 
-    <div class="content-wrapper">
+    <div>
         <section class="content-header">
             <h1>
                 Insert Dataset

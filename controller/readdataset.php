@@ -1,7 +1,6 @@
 <?php
     require_once "Classes/PHPExcel.php";
     include "connection.php";
-    include "excel_reader2.php";
 
     $excel = PHPExcel_IOFactory::load('Data Ano clean.xlsx');
     $excel->setActiveSheetIndex(0);

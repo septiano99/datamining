@@ -30,7 +30,11 @@
         $data = array();
 
         foreach ($excelraw as $excelcolumn) {
-            array_push($data, $excelcolumn);
+            if (empty($excelcolumn)) {
+                array_push($data, "");
+            } else {
+                array_push($data, $excelcolumn);
+            }
         }
 
         $sql = "INSERT INTO t_dataset (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,

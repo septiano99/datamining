@@ -17,6 +17,21 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -66,7 +81,7 @@
         </section>
     </aside>
 
-    <div>
+    <div class="content-wrapper">
         <section class="content-header">
             <h1>
                 Insert Dataset
@@ -84,70 +99,72 @@
             <h1>
                 DATASET
             </h1>
-            <table border="1">
-                <tr>
-                    <th>Kolek</th>
-                    <th>No CIF</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Tgl Buka</th>
-                    <th>Tgl Jatuh Tempo </th>
-                    <th>Jangka Waktu/Bulan</th>
-                    <th>Plafon</th>
-                    <th>XAngsuran</th>
-                    <th>Angsuran Ke</th>
-                    <th>Angsur PK</th>
-                    <th>Angsur BNG</th>
-                    <th>Tunggak Pokok</th>
-                    <th>Tunggak Bunga</th>
-                    <th>Tgl Tunggak Pokok</th>
-                    <th>Tgl Tunggak Bunga</th>
-                    <th>XTGKP</th>
-                    <th>XTGKB</th>
-                    <th>HR_TGKP</th>
-                    <th>HT_TGKB</th>
-                    <th>Kredit Ke</th>
-                    <th>Jenis Jam</th>
-                    <th>Nilai Agunan</th>
-                </tr>
-                <?php
-                include '../controller/connection.php';
-
-                $sql = "SELECT * FROM t_dataset";
-                $result = pg_query($sql);
-                while ($row = pg_fetch_row($result)) {
-
-                    ?>
+            <div style="overflow-x:auto;">
+                <table border="1">
                     <tr>
-                        <td><?php echo $row[1]; ?></td>
-                        <td><?php echo $row[2]; ?></td>
-                        <td><?php echo $row[3]; ?></td>
-                        <td><?php echo $row[5]; ?></td>
-                        <td><?php echo $row[6]; ?></td>
-                        <td><?php echo $row[7]; ?></td>
-                        <td><?php echo $row[8]; ?></td>
-                        <td><?php echo $row[9]; ?></td>
-                        <td><?php echo $row[10]; ?></td>
-                        <td><?php echo $row[11]; ?></td>
-                        <td><?php echo $row[12]; ?></td>
-                        <td><?php echo $row[13]; ?></td>
-                        <td><?php echo $row[14]; ?></td>
-                        <td><?php echo $row[15]; ?></td>
-                        <td><?php echo $row[16]; ?></td>
-                        <td><?php echo $row[17]; ?></td>
-                        <td><?php echo $row[18]; ?></td>
-                        <td><?php echo $row[19]; ?></td>
-                        <td><?php echo $row[20]; ?></td>
-                        <td><?php echo $row[21]; ?></td>
-                        <td><?php echo $row[22]; ?></td>
-                        <td><?php echo $row[23]; ?></td>
+                        <th>Kolek</th>
+                        <th>No CIF</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tgl Buka</th>
+                        <th>Tgl Jatuh Tempo </th>
+                        <th>Jangka Waktu/Bulan</th>
+                        <th>Plafon</th>
+                        <th>XAngsuran</th>
+                        <th>Angsuran Ke</th>
+                        <th>Angsur PK</th>
+                        <th>Angsur BNG</th>
+                        <th>Tunggak Pokok</th>
+                        <th>Tunggak Bunga</th>
+                        <th>Tgl Tunggak Pokok</th>
+                        <th>Tgl Tunggak Bunga</th>
+                        <th>XTGKP</th>
+                        <th>XTGKB</th>
+                        <th>HR_TGKP</th>
+                        <th>HT_TGKB</th>
+                        <th>Kredit Ke</th>
+                        <th>Jenis Jam</th>
+                        <th>Nilai Agunan</th>
                     </tr>
                     <?php
-                }
+                    include '../controller/connection.php';
 
-                pg_close();
-                ?>
-            </table>
+                    $sql = "SELECT * FROM t_dataset";
+                    $result = pg_query($sql);
+                    while ($row = pg_fetch_row($result)) {
+
+                        ?>
+                        <tr>
+                            <td><?php echo $row[1]; ?></td>
+                            <td><?php echo $row[2]; ?></td>
+                            <td><?php echo $row[3]; ?></td>
+                            <td><?php echo $row[5]; ?></td>
+                            <td><?php echo $row[6]; ?></td>
+                            <td><?php echo $row[7]; ?></td>
+                            <td><?php echo $row[8]; ?></td>
+                            <td><?php echo $row[9]; ?></td>
+                            <td><?php echo $row[10]; ?></td>
+                            <td><?php echo $row[11]; ?></td>
+                            <td><?php echo $row[12]; ?></td>
+                            <td><?php echo $row[13]; ?></td>
+                            <td><?php echo $row[14]; ?></td>
+                            <td><?php echo $row[15]; ?></td>
+                            <td><?php echo $row[16]; ?></td>
+                            <td><?php echo $row[17]; ?></td>
+                            <td><?php echo $row[18]; ?></td>
+                            <td><?php echo $row[19]; ?></td>
+                            <td><?php echo $row[20]; ?></td>
+                            <td><?php echo $row[21]; ?></td>
+                            <td><?php echo $row[22]; ?></td>
+                            <td><?php echo $row[23]; ?></td>
+                        </tr>
+                        <?php
+                    }
+
+                    pg_close();
+                    ?>
+                </table>
+            </div>
         </section>
     </div>
 

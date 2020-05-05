@@ -31,7 +31,7 @@
 
         foreach ($excelraw as $excelcolumn) {
             if ($excelcolumn == null) {
-                array_push($data, "");
+                array_push($data, "-1");
             } else {
                 array_push($data, $excelcolumn);
             }

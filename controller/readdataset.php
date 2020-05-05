@@ -1,6 +1,6 @@
 <?php
-    include "excel_reader2.php";
     include "connection.php";
+    include "excel_reader2.php";
 
     $allowedFileType = [
         'application/vnd.ms-excel',
@@ -11,15 +11,19 @@
 
     $nip = $_POST['nip'];
 
-    if (in_array($_FILES["file"]["type"], $allowedFileType)) {
+    if (in_array($_FILES["filepegawai"]["name"], $allowedFileType)) {
 
-        $target = basename($_FILES['file']['name']) ;
-        move_uploaded_file($_FILES['file']['tmp_name'], $target);
+        // upload file xls
+        $target = basename($_FILES['filepegawai']['name']) ;
+        move_uploaded_file($_FILES['filepegawai']['tmp_name'], $target);
 
         // beri permisi agar file xls dapat di baca
-        chmod($_FILES["file"]["name"],0777);
+        chmod($_FILES['filepegawai']['name'],0777);
 
-        $data = new Spreadsheet_Excel_Reader($_FILES['file']['name'], false);
+        // mengambil isi file xls
+        $data = new Spreadsheet_Excel_Reader($_FILES['filepegawai']['name'],false);
+
+        // menghitung jumlah baris data yang ada
         $totalRow = $data->rowcount($sheet_index=0);
 
         $sql = "DELETE FROM t_dataset";
@@ -59,6 +63,9 @@
 
             $result = pg_query($sql);
         }
+
+        // hapus kembali file .xls yang di upload tadi
+        unlink($_FILES['filepegawai']['name']);
 
         echo '<script>alert("Proses Upload Dataset Berhasil")</script>';
         echo '<script>window.location = "../pages/dataset.php?nip=' . $nip . '";</script>';

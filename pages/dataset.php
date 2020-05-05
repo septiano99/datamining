@@ -73,13 +73,10 @@
             </h1>
         </section>
         <section class="content">
-            <form action="../controller/readdataset.php?nip=<?php echo $_GET['nip']; ?>" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
-                <div>
-                    <label>Choose ExcelFile</label>
-                    <input type="file" name="file" id="file" accept=".xls,.xlsx">
-                    <button type="submit" id="submit" name="import" class="btn-submit">Import</button>
-                </div>
-
+            <form method="post" enctype="multipart/form-data" action="../controller/readdataset.php?nip=<?php echo $_GET['nip']; ?>">
+                Pilih File:
+                <input name="filepegawai" type="file" required="required" accept=".xls,.xlsx">
+                <input name="upload" type="submit" value="Import">
             </form>
         </section>
     </div>

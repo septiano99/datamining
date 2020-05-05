@@ -30,7 +30,7 @@
         $data = array();
 
         foreach ($excelraw as $excelcolumn) {
-            if (empty($excelcolumn)) {
+            if ($excelcolumn == null) {
                 array_push($data, "");
             } else {
                 array_push($data, $excelcolumn);

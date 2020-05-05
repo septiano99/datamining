@@ -1,8 +1,8 @@
 <?php
-    $host = "ec2-52-207-25-133.compute-1.amazonaws.com";
-    $dbName = "d3p04j1bg6uce2";
-    $user = "zlbsdgquhimfhe";
-    $password = "ce6b7fd7e0c1666987a176f54305f8c0887e44af348a1d4d5c2ce9d8a94c6af7";
+    $host = "ec2-18-232-143-90.compute-1.amazonaws.com";
+    $dbName = "dbvnr5qt9dco7q";
+    $user = "mhwokbyoflkkvc";
+    $password = "1749b4963d9b4bd285e939bd82d382c95ae7b9ca5ecbfc4b570eba0fa89ec7e1";
     $db = pg_connect("host=$host port=5432 dbname=$dbName user=$user password=$password");
     echo "<script>console.log('Connection DB " . $dbName . " Success' );</script>";
 ?>

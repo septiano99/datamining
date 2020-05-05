@@ -32,7 +32,7 @@
     }
 
 echo "<table>";
-    foreach ($exceldata as $index -> $excelraw) {
+    foreach ($exceldata as $index => $excelraw) {
         echo "<tr>";
         foreach ($excelraw as $excelcolumn) {
             echo "<td>" . $excelcolumn . "</td>";

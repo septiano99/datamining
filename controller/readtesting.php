@@ -26,14 +26,14 @@
     $sql = "DELETE FROM t_testing";
     $result = pg_query($sql);
 
-    foreach ($exceldata as $index => $excelraw) {
+    for ($i = 0; $i < count($exceldata); $i++) {
         $data = array();
 
-        foreach ($excelraw as $excelcolumn) {
-            if ($excelcolumn == null) {
+        for ($j = 0; $j < count($exceldata[$i]); $j++) {
+            if ($exceldata[$i][$j] == null) {
                 array_push($data, "-1");
             } else {
-                array_push($data, $excelcolumn);
+                array_push($data, $exceldata[$i][$j]);
             }
         }
 

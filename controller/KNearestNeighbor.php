@@ -121,7 +121,7 @@
                 }
             }
 
-            array_push($result, $resultData);
+//            array_push($result, $resultData);
 
             $test = $testing[$index];
             $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,

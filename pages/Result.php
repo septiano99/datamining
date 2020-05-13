@@ -60,7 +60,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN MENU</li>
                 <li><a href="Dataset.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Dataset</a></li>
-                <li><a href="testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
+                <li><a href="Testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
                 <li><a href="Result.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Result</a></li>
             </ul>
         </section>

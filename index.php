@@ -22,7 +22,7 @@
     }
 </style>
 <body class="hold-transition login-page" id ="grad1">
-<form action="controller/login.php" method="post" onSubmit="return validasi()">
+<form action="controller/Login.php" method="post" onSubmit="return validasi()">
     <div class="login-box">
         <div class="login-logo">
             <b>DATA MINING</b>SYSTEM

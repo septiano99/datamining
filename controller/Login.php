@@ -1,5 +1,5 @@
 <?php
-    include 'connection.php';
+    include 'Connection.php';
 
     $nip = $_POST['nip'];
     $password = $_POST['password'];
@@ -15,7 +15,7 @@
         $_SESSION['name'] = $row[1];
         $_SESSION['status'] = "login";
 
-        echo '<script>window.location = "../pages/dashboard.php?nip=' . $nip . '";</script>';
+        echo '<script>window.location = "../pages/Dashboard.php?nip=' . $nip . '";</script>';
     } else {
         echo '<script>alert("NIP dan Password tidak valid")</script>';
         echo '<script>window.location = "../index.php";</script>';

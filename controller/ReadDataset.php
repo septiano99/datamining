@@ -1,6 +1,6 @@
 <?php
     require "Classes/PHPExcel/IOFactory.php";
-    include "connection.php";
+    include "Connection.php";
 
     $nip = $_POST['nip'];
     $inputfilename = $_FILES['file']['tmp_name'];
@@ -48,5 +48,5 @@
     }
 
     echo '<script>alert("Proses Upload Dataset Berhasil")</script>';
-    echo '<script>window.location = "../pages/dataset.php?nip=' . $nip . '";</script>';
+    echo '<script>window.location = "../pages/Dataset.php?nip=' . $nip . '";</script>';
 ?>

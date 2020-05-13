@@ -17,21 +17,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <style>
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 100%;
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even){background-color: #f2f2f2}
-    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -56,7 +41,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-right">
-                                    <form action="../controller/logout.php" method="get">
+                                    <form action="../controller/Logout.php" method="get">
                                         <input type="submit" class="btn btn-default btn-flat" value="Sign out">
                                     </form>
                                 </div>
@@ -74,9 +59,9 @@
             <!--MENU SLIDER-->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN MENU</li>
-                <li><a href="dataset.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Dataset</a></li>
-                <li><a href="testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
-                <li><a href="result.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Result</a></li>
+                <li><a href="Dataset.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Dataset</a></li>
+                <li><a href="Testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
+                <li><a href="Result.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Result</a></li>
             </ul>
         </section>
     </aside>
@@ -84,12 +69,12 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Insert Dataset
+                Insert Data Testing
             </h1>
         </section>
         <section class="content">
-            <form method="post" enctype="multipart/form-data" action="../controller/readdataset.php?nip=<?php echo $_GET['nip']; ?>">
-                Pilih File Dataset:
+            <form method="post" enctype="multipart/form-data" action="../controller/ReadTesting.php?nip=<?php echo $_GET['nip']; ?>">
+                Pilih File Testing:
                 <br/>
                 <input name="file" type="file" required="required" accept=".xls,.xlsx">
                 <br/><br/>
@@ -97,12 +82,11 @@
             </form>
             <br/>
             <h1>
-                DATASET
+                DATA TESTING
             </h1>
             <div style="overflow-x:auto;">
                 <table border="1">
                     <tr>
-                        <th>Kolek</th>
                         <th>No CIF</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
@@ -127,9 +111,9 @@
                         <th>Nilai Agunan</th>
                     </tr>
                     <?php
-                    include '../controller/connection.php';
+                    include '../controller/Connection.php';
 
-                    $sql = "SELECT * FROM t_dataset";
+                    $sql = "SELECT * FROM t_testing";
                     $result = pg_query($sql);
                     while ($row = pg_fetch_row($result)) {
 
@@ -157,7 +141,6 @@
                             <td><?php echo $row[20]; ?></td>
                             <td><?php echo $row[21]; ?></td>
                             <td><?php echo $row[22]; ?></td>
-                            <td><?php echo $row[23]; ?></td>
                         </tr>
                         <?php
                     }

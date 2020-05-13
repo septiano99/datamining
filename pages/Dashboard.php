@@ -41,7 +41,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-right">
-                                    <form action="../controller/logout.php" method="get">
+                                    <form action="../controller/Logout.php" method="get">
                                         <input type="submit" class="btn btn-default btn-flat" value="Sign out">
                                     </form>
                                 </div>
@@ -59,9 +59,9 @@
             <!--MENU SLIDER-->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN MENU</li>
-                <li><a href="dataset.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Dataset</a></li>
-                <li><a href="testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
-                <li><a href="result.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Result</a></li>
+                <li><a href="Dataset.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Dataset</a></li>
+                <li><a href="Testing.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Data Tesing</a></li>
+                <li><a href="Result.php?nip=<?php echo $_GET['nip']; ?>"><i class="pull-right-container"></i>Result</a></li>
             </ul>
         </section>
     </aside>

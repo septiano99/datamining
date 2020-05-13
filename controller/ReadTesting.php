@@ -1,6 +1,6 @@
 <?php
     require "Classes/PHPExcel/IOFactory.php";
-    include "connection.php";
+    include "Connection.php";
 
     $nip = $_POST['nip'];
     $inputfilename = $_FILES['file']['tmp_name'];
@@ -48,5 +48,5 @@
     }
 
     echo '<script>alert("Proses Upload Data Testing Berhasil")</script>';
-    echo '<script>window.location = "../pages/testing.php?nip=' . $nip . '";</script>';
+    echo '<script>window.location = "../pages/Testing.php?nip=' . $nip . '";</script>';
 ?>

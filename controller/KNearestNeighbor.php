@@ -2,8 +2,6 @@
     include "Connection.php";
 
     try {
-        $result = array();
-        $ED = array();
         $dataset = array();
         $datasetClass = array();
         $testing = array();
@@ -62,6 +60,8 @@
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
+            $ED = array();
+
             for ($i = 0; $i < count($dataset); $i++) {
                 $dataED = array();
                 array_push($dataED, 0.0); // nilai init euclidean distance

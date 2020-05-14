@@ -5,6 +5,7 @@
         $dataset = array();
         $datasetClass = array();
         $testing = array();
+        $testingOriginal = array();
 
         // Get all dataset from database
         $sqlDataset = "SELECT * FROM t_dataset";
@@ -54,9 +55,35 @@
             array_push($data, $row[19]);
             array_push($data, $row[20]);
             array_push($data, $row[22]);
-
             array_push($testing, $data);
+
+            $dataOriginal = array();
+            array_push($dataOriginal, $row[1]);
+            array_push($dataOriginal, $row[2]);
+            array_push($dataOriginal, $row[3]);
+            array_push($dataOriginal, $row[4]);
+            array_push($dataOriginal, $row[5]);
+            array_push($dataOriginal, $row[6]);
+            array_push($dataOriginal, $row[7]);
+            array_push($dataOriginal, $row[8]);
+            array_push($dataOriginal, $row[9]);
+            array_push($dataOriginal, $row[10]);
+            array_push($dataOriginal, $row[11]);
+            array_push($dataOriginal, $row[12]);
+            array_push($dataOriginal, $row[13]);
+            array_push($dataOriginal, $row[14]);
+            array_push($dataOriginal, $row[15]);
+            array_push($dataOriginal, $row[16]);
+            array_push($dataOriginal, $row[17]);
+            array_push($dataOriginal, $row[18]);
+            array_push($dataOriginal, $row[19]);
+            array_push($dataOriginal, $row[20]);
+            array_push($dataOriginal, $row[22]);
+            array_push($testingOriginal, $dataOriginal);
         }
+
+        $sql = "DELETE FROM t_result";
+        $result = pg_query($sql);
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
@@ -121,17 +148,15 @@
                 }
             }
 
-//            array_push($result, $resultData);
+            $test = $testingOriginal[$index];
+            $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
+                    plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgk_bunga, tgl_tgk_pokok, tgl_tgk_bunga,
+                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
+                    ($resultData, '$test[0]', '$test[1]', $test[2], '$test[3]', '$test[4]', $test[5],
+                    $test[6], $test[7], $test[8], $test[9], $test[10], $test[11], $test[12], '$test[13]', '$test[14]',
+                    $test[15], $test[16], $test[17], $test[18], $test[19], '$test[20]', $test[21])";
 
-            $test = $testing[$index];
-//            $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
-//                    plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgk_bunga, tgl_tgk_pokok, tgl_tgk_bunga,
-//                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
-//                    ($resultData, '$test[0]', '$test[1]', $test[2], '$test[3]', '$test[4]', $test[5],
-//                    $test[6], $test[7], $test[8], $test[9], $test[10], $test[11], $test[12], '$test[13]', '$test[14]',
-//                    $test[15], $test[16], $test[17], $test[18], $test[19], '$test[20]', $test[21])";
-
-            $sql = "INSERT INTO t_result (kolek) VALUES ($resultData)";
+//            $sql = "INSERT INTO t_result (kolek) VALUES ($resultData)";
 
             $result = pg_query($sql);
         }

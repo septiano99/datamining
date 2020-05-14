@@ -158,10 +158,10 @@
 
             $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
                     plafon, xangsur, angske, angsurpk, angsurbng, tgk_pokok, tgl_tgk_pokok, tgl_tgk_bunga,
-                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke) VALUES
+                    xtgkp, xtgkb, hr_tgkp, hr_tgkb, kreditke, jenis_jam, nilaiagun) VALUES
                     ($resultData, '$test[0]', '$test[1]', $test[2], '$test[3]', '$test[4]', $test[5],
                     $test[6], $test[7], $test[8], $test[9], $test[10], $test[11], '$test[13]', '$test[14]',
-                    $test[15], $test[16], $test[17], $test[18], $test[19])";
+                    $test[15], $test[16], $test[17], $test[18], $test[19], '$test[20]', $test[21])";
 
             $result = pg_query($sql);
         }

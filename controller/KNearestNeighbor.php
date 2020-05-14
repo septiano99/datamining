@@ -68,7 +68,7 @@
                 array_push($dataED, $i);  // index dari dataset
                 array_push($dataED, $datasetClass[$i]); // kelas dari dataset
 
-                for ($count = 0; $count < count($testing[$i]); $count++) {
+                for ($count = 0; $count < count($testing[$index]); $count++) {
                     $dataED[0] += ($dataset[$i][$count] - $testing[$index][$count]) * ($dataset[$i][$count] - $testing[$index][$count]);
                 }
 

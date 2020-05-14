@@ -85,7 +85,7 @@
             <div style="overflow-x:auto;">
                 <table border="1">
                     <tr>
-                        <th>Kolek</th>
+                        <th><b>Kolek</b></th>
                         <th>No CIF</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
@@ -118,7 +118,7 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $row[1]; ?></td>
+                            <td><b><?php echo $row[1]; ?></b></td>
                             <td><?php echo $row[2]; ?></td>
                             <td><?php echo $row[3]; ?></td>
                             <td><?php echo $row[4]; ?></td>

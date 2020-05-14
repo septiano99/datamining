@@ -157,9 +157,9 @@
 //                    $test[15], $test[16], $test[17], $test[18], $test[19], '$test[20]', $test[21])";
 
             $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,
-                    plafon) VALUES
+                    plafon, xangsur, angske, angsurpk) VALUES
                     ($resultData, '$test[0]', '$test[1]', $test[2], '$test[3]', '$test[4]', $test[5],
-                    $test[6])";
+                    $test[6], $test[7], $test[8], $test[9])";
 
             $result = pg_query($sql);
         }

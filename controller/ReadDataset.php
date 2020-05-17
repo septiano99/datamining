@@ -47,6 +47,8 @@
         $result = pg_query($sql);
     }
 
+    pg_close();
+
     echo '<script>alert("Proses Upload Dataset Berhasil")</script>';
     echo '<script>window.location = "../pages/Dataset.php?nip=' . $nip . '";</script>';
 ?>

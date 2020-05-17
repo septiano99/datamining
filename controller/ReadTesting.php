@@ -47,6 +47,8 @@
         $result = pg_query($sql);
     }
 
+    pg_close();
+
     echo '<script>alert("Proses Upload Data Testing Berhasil")</script>';
     echo '<script>window.location = "../pages/Testing.php?nip=' . $nip . '";</script>';
 ?>

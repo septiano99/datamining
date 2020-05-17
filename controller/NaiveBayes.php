@@ -169,8 +169,8 @@
             $compare = -1;
             $resultData = 1;
             foreach ($finalProb as $key => $value) {
-                if ($compare < $value) {
-                    $compare = $value;
+                if ($compare < $value[0]) {
+                    $compare = $value[0];
                     $resultData = $key;
                 }
             }

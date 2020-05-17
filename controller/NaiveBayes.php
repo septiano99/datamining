@@ -124,7 +124,7 @@
                         }
                     }
 
-                    $resultCalculate = $calculate / $value;
+                    $resultCalculate = $calculate / $value[0];
                     array_push($dataColumn, $resultCalculate);
                 }
 

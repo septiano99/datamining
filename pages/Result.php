@@ -116,7 +116,7 @@
                     </tr>
                     <?php
                     include '../controller/Connection.php';
-                    error_log("Tes logger");
+                    
                     $sql = "SELECT * FROM t_result";
                     $result = pg_query($sql);
                     while ($row = pg_fetch_row($result)) {

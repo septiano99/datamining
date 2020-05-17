@@ -138,16 +138,16 @@
                 $calcAtt = 0;
 
                 $att = 0;
-                for (; $att < count($value); $att++) {
-                    if ($value[$att] != 0) {
-                        $calcAtt = $value[$att];
+                for (; $att < count($value[0]); $att++) {
+                    if ($value[0][$att] != 0) {
+                        $calcAtt = $value[0][$att];
                         break;
                     }
                 }
 
-                for ($atts = $att; $atts < count($value); $atts++) {
-                    if ($value[$att] != 0) {
-                        $calcAtt = ($calcAtt * $value[$atts]) + 1 / 1;
+                for ($atts = $att; $atts < count($value[0]); $atts++) {
+                    if ($value[0][$att] != 0) {
+                        $calcAtt = ($calcAtt * $value[0][$atts]) + 1 / 1;
                     }
                 }
 

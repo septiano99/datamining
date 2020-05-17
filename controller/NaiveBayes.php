@@ -156,24 +156,29 @@
             }
 
             // Multiply probabilitas class dengan probabilitas class (Ci * XCi)
-            $finalProb = array();
+            $compare = -1;
+            $resultData = 1;
             foreach ($resultProdCi as $key => $value) {
                 $finalCount = ($resultMultiplyProbXCi[$key][0] * $value[0]) + 2 / 1;
-                $finalCount = 100 - $finalCount;
+//                $finalCount = 100 - $finalCount;
 
-                $finalProb[$key] = array();
-                array_push($finalProb, $finalCount);
+                if ($compare < $finalCount) {
+                    $compare = $finalCount;
+                    $resultData = $key;
+                }
+
+//                $finalProb[$key] = array();
+//                array_push($finalProb, $finalCount);
             }
 
             // Mencari probabilitas tertinggi
-            $compare = -1;
-            $resultData = 1;
-            foreach ($finalProb as $key => $value) {
-                if ($compare < $value[0]) {
-                    $compare = $value[0];
-                    $resultData = $key;
-                }
-            }
+
+//            foreach ($finalProb as $key => $value) {
+//                if ($compare < $value[0]) {
+//                    $compare = $value[0];
+//                    $resultData = $key;
+//                }
+//            }
 
             $test = $testingOriginal[$index];
             $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,

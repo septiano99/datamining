@@ -1,6 +1,7 @@
 <?php
     include "Connection.php";
 
+    $nip = $_GET['nip'];
     try {
         $dataset = array();
         $datasetClass = array();

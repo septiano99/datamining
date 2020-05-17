@@ -73,8 +73,13 @@
             </h1>
         </section>
         <section class="content">
-            <form method="post" enctype="multipart/form-data" action="../controller/KNearestNeighbor.php?nip=<?php echo $_GET['nip']; ?>">
+            <form method="post" enctype="multipart/form-data" action="../controller/Method.php?nip=<?php echo $_GET['nip']; ?>">
                 Lakukan prediksi
+                <br/>
+                <select name="method" id="method">
+                    <option value="KNN">K-Nearest Neighbors</option>
+                    <option value="NB">Naive Bayes</option>
+                </select>
                 <br/><br/>
                 <input name="upload" type="submit" value="Start">
             </form>

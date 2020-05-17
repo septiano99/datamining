@@ -158,7 +158,7 @@
             // Multiply probabilitas class dengan probabilitas class (Ci * XCi)
             $finalProb = array();
             foreach ($resultProdCi as $key => $value) {
-                $finalCount = ($resultMultiplyProbXCi[$key] * $value) + 2 / 1;
+                $finalCount = ($resultMultiplyProbXCi[$key] * $value[0]) + 2 / 1;
                 $finalCount = 100 - $finalCount;
 
                 $finalProb[$key] = array();

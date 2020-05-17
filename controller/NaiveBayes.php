@@ -187,7 +187,7 @@
         }
 
 
-        echo '<script>alert("Proses Prediksi Selesai Menggunkana Metode Naive Bayes")</script>';
+        echo '<script>alert("Proses Prediksi Selesai Menggunakan Metode Naive Bayes")</script>';
         echo '<script>window.location = "../pages/Result.php?nip=' . $nip . '";</script>';
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";

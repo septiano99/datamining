@@ -168,7 +168,7 @@
             $result = pg_query($sql);
         }
 
-        echo '<script>alert("Proses Prediksi Selesai")</script>';
+        echo '<script>alert("Proses Prediksi Selesai Menggunkana Metode K-Nearest Neightbors")</script>';
         echo '<script>window.location = "../pages/Result.php?nip=' . $nip . '";</script>';
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";

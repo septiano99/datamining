@@ -103,6 +103,11 @@
                     array_push($probCi[$datasetClass[$i]], $plus);
                 }
             }
+            error_log("-------------------- Probabilitas Ci Basic ----------------------------");
+            foreach ($probCi as $key => $value) {
+                error_log($key . " => " . $value[0]);
+            }
+            error_log("-----------------------------------------------------------------------");
 
             $resultProdCi = array();
             foreach ($probCi as $key => $value) {

@@ -128,7 +128,7 @@
             // print sorting ED
             error_log("-------------------------- SORTING ED ---------------------------------");
             for ($print = 0; $print < count($ED); $print++) {
-                error_log("Index (" . $ED[$print][1] . ") = > " . $ED[$print][0]);
+                error_log("Index (" . $ED[$print][1] . ") = > " . $ED[$print][0] . " (" . $ED[$print][2] . ")");
             }
             error_log("-----------------------------------------------------------------------");
 
@@ -141,7 +141,7 @@
             // print split K value
             error_log("-------------------------- SPLIT ED -----------------------------------");
             for ($print = 0; $print < count($split); $print++) {
-                error_log("Index (" . $split[$print][1] . ") = > " . $split[$print][0]);
+                error_log("Index (" . $split[$print][1] . ") = > " . $split[$print][0] . " (" . $split[$print][2] . ")");
             }
             error_log("-----------------------------------------------------------------------");
 

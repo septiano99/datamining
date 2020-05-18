@@ -89,7 +89,7 @@
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
-            error_log("============================ TEST DATA " . $index . "====================================");
+            error_log("============================ TEST DATA " . $index . " ====================================");
             $dataTest = $testing[$index];
 
             // Menghitung probabilitas class (Prob Ci)
@@ -101,7 +101,7 @@
                     $probCi[$datasetClass[$i]] = $probCi[$datasetClass[$i]] + 1;
                 }
             }
-            error_log("-------------------- Probabilitas Ci Basic ----------------------------");
+            error_log("---------------- Probabilitas Ci Basic (" . count($dataset) . " ------------------------");
             foreach ($probCi as $key => $value) {
                 error_log($key . " => " . $value);
             }
@@ -160,7 +160,6 @@
                 }
 
                 $resultMultiplyProbXCi[$key] = $calcAtt;
-//                array_push($resultMultiplyProbXCi[$key], $calcAtt);
             }
 
             error_log("----------------------- Probabilitas XCi ------------------------------");
@@ -175,7 +174,7 @@
             $resultData = 1;
             foreach ($resultProdCi as $key => $value) {
                 $finalCount = ($resultMultiplyProbXCi[$key] * $value) + 2 / 1;
-                $finalCount = 100 - $finalCount;
+//                $finalCount = 100 - $finalCount;
 
                 if ($compare < $finalCount) {
                     $compare = $finalCount;

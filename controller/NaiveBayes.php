@@ -89,6 +89,7 @@
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
+            error_log("============================ TEST DATA " . $index . "====================================");
             $dataTest = $testing[$index];
 
             // Menghitung probabilitas class (Prob Ci)
@@ -109,6 +110,12 @@
                 $resultProdCi[$key] = array();
                 array_push($resultProdCi[$key], $devide);
             }
+
+            error_log("----------------------- Probabilitas Ci -------------------------------");
+            foreach ($resultProdCi as $key => $value) {
+                error_log($key . " => " . $value[0]);
+            }
+            error_log("-----------------------------------------------------------------------");
 
             // Menghitung probabilitas arrtibute (Prob XCi)
             $resultProbXCi = array();
@@ -155,7 +162,14 @@
                 array_push($resultMultiplyProbXCi[$key], $calcAtt);
             }
 
+            error_log("----------------------- Probabilitas XCi ------------------------------");
+            foreach ($resultMultiplyProbXCi as $key => $value) {
+                error_log($key . " => " . $value[0]);
+            }
+            error_log("-----------------------------------------------------------------------");
+
             // Multiply probabilitas class dengan probabilitas class (Ci * XCi)
+            error_log("---------------------- Probabilitas Final -----------------------------");
             $compare = -1;
             $resultData = 1;
             foreach ($resultProdCi as $key => $value) {
@@ -167,6 +181,9 @@
                     $resultData = $key;
                 }
             }
+            error_log("Result : " . $resultData . " (" . $compare . ")");
+            error_log("-----------------------------------------------------------------------");
+            error_log("=============================== END ===================================");
 
             $test = $testingOriginal[$index];
             $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,

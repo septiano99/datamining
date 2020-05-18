@@ -90,7 +90,6 @@
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
             error_log("============================ TEST DATA " . $index . "====================================");
-            error_log("Testing data ke " . $index);
             $ED = array();
 
             error_log("----------------------- Euclidean Distance -------------------------------");

@@ -89,7 +89,7 @@
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
-            error_log("==========================================================================");
+            error_log("============================ TEST DATA " . $index . "====================================");
             error_log("Testing data ke " . $index);
             $ED = array();
 
@@ -147,7 +147,7 @@
 
             // check majority
             $kolek = -1;
-            $count = 0;
+            $countFinal = 0;
             $resultData = 1;
 
             $counting = array();
@@ -164,11 +164,16 @@
             }
 
             foreach ($counting as $key => $value) {
-                if ($count < $value[0]) {
-                    $count = $value[0];
+                if ($countFinal < $value[0]) {
+                    $countFinal = $value[0];
                     $resultData = $key;
                 }
             }
+
+            error_log("------------------------ RESULT PREDICTION ----------------------------");
+            error_log($resultData . " => " . $countFinal);
+            error_log("-----------------------------------------------------------------------");
+            error_log("=============================== END ===================================");
 
             $test = $testingOriginal[$index];
 //            $sql = "INSERT INTO t_result (kolek, no_cif, tgl_lahir, jenis_kelamin, tgl_buka, tgl_jt, jwaktu_bln,

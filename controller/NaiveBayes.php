@@ -97,11 +97,8 @@
             for ($i = 0; $i < count($dataset); $i++) {
                 if (!array_key_exists($datasetClass[$i], $probCi)) {
                     $probCi[$datasetClass[$i]] = 1;
-//                    array_push($probCi[$datasetClass[$i]], 1);
                 } else {
                     $probCi[$datasetClass[$i]] = $probCi[$datasetClass[$i]] + 1;
-//                    $plus = $probCi[$datasetClass[$i]][0] + 1;
-//                    array_push($probCi[$datasetClass[$i]], $plus);
                 }
             }
             error_log("-------------------- Probabilitas Ci Basic ----------------------------");
@@ -112,14 +109,13 @@
 
             $resultProdCi = array();
             foreach ($probCi as $key => $value) {
-                $devide = $value[0] / count($dataset);
-                $resultProdCi[$key] = array();
-                array_push($resultProdCi[$key], $devide);
+                $devide = $value / count($dataset);
+                $resultProdCi[$key] = $devide;
             }
 
             error_log("----------------------- Probabilitas Ci -------------------------------");
             foreach ($resultProdCi as $key => $value) {
-                error_log($key . " => " . $value[0]);
+                error_log($key . " => " . $value);
             }
             error_log("-----------------------------------------------------------------------");
 
@@ -137,12 +133,11 @@
                         }
                     }
 
-                    $resultCalculate = $calculate / $value[0];
+                    $resultCalculate = $calculate / $value;
                     array_push($dataColumn, $resultCalculate);
                 }
 
-                $resultProbXCi[$key] = array();
-                array_push($resultProbXCi[$key], $dataColumn);
+                $resultProbXCi[$key] = $dataColumn;
             }
 
             // Multiply probabilitas attribute
@@ -151,26 +146,26 @@
                 $calcAtt = 0;
 
                 $att = 0;
-                for (; $att < count($value[0]); $att++) {
-                    if ($value[0][$att] != 0) {
-                        $calcAtt = $value[0][$att];
+                for (; $att < count($value); $att++) {
+                    if ($value[$att] != 0) {
+                        $calcAtt = $value[$att];
                         break;
                     }
                 }
 
-                for ($atts = $att; $atts < count($value[0]); $atts++) {
-                    if ($value[0][$att] != 0) {
-                        $calcAtt = ($calcAtt * $value[0][$atts]) + 1 / 1;
+                for ($atts = $att; $atts < count($value); $atts++) {
+                    if ($value[$att] != 0) {
+                        $calcAtt = ($calcAtt * $value[$atts]) + 1 / 1;
                     }
                 }
 
-                $resultMultiplyProbXCi[$key] = array();
-                array_push($resultMultiplyProbXCi[$key], $calcAtt);
+                $resultMultiplyProbXCi[$key] = $calcAtt;
+//                array_push($resultMultiplyProbXCi[$key], $calcAtt);
             }
 
             error_log("----------------------- Probabilitas XCi ------------------------------");
             foreach ($resultMultiplyProbXCi as $key => $value) {
-                error_log($key . " => " . $value[0]);
+                error_log($key . " => " . $value);
             }
             error_log("-----------------------------------------------------------------------");
 
@@ -179,7 +174,7 @@
             $compare = -1;
             $resultData = 1;
             foreach ($resultProdCi as $key => $value) {
-                $finalCount = ($resultMultiplyProbXCi[$key][0] * $value[0]) + 2 / 1;
+                $finalCount = ($resultMultiplyProbXCi[$key] * $value) + 2 / 1;
                 $finalCount = 100 - $finalCount;
 
                 if ($compare < $finalCount) {

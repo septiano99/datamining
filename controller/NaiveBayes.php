@@ -101,7 +101,7 @@
                     $probCi[$datasetClass[$i]] = $probCi[$datasetClass[$i]] + 1;
                 }
             }
-            error_log("---------------- Probabilitas Ci Basic (" . count($dataset) . " ------------------------");
+            error_log("------------------ Probabilitas Ci Basic (" . count($dataset) . ") ------------------------");
             foreach ($probCi as $key => $value) {
                 error_log($key . " => " . $value);
             }

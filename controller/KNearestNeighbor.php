@@ -89,8 +89,11 @@
 
         // Menghitung jarak dengan Euclidean Distance
         for ($index = 0; $index < count($testing); $index++) {
+            error_log("==========================================================================");
+            error_log("Testing data ke " . $index);
             $ED = array();
 
+            error_log("----------------------- Euclidean Distance -------------------------------");
             for ($i = 0; $i < count($dataset); $i++) {
                 $dataED = array();
                 array_push($dataED, 0.0); // nilai init euclidean distance
@@ -103,7 +106,10 @@
 
                 sqrt($dataED[0]);
                 array_push($ED, $dataED);
+
+                error_log("Index (" . $i . ") => " . $dataED[0]);
             }
+            error_log("-----------------------------------------------------------------------");
 
             // Sorting jarak dari terkecil hingga terbesar
             $lengthScan = count($ED) - 2;
@@ -119,11 +125,25 @@
                 }
             }
 
+            // print sorting ED
+            error_log("-------------------------- SORTING ED ---------------------------------");
+            for ($print = 0; $print < count($ED); $print++) {
+                error_log("Index (" . $ED[$print][1] . ") = > " . $ED[$print][0]);
+            }
+            error_log("-----------------------------------------------------------------------");
+
             // split sample from K value = 15
             $split = array();
             for ($s = 0; $s < 15; $s++) {
                 $split[$s] = $ED[$s];
             }
+
+            // print split K value
+            error_log("-------------------------- SPLIT ED -----------------------------------");
+            for ($print = 0; $print < count($split); $print++) {
+                error_log("Index (" . $split[$print][1] . ") = > " . $split[$print][0]);
+            }
+            error_log("-----------------------------------------------------------------------");
 
             // check majority
             $kolek = -1;

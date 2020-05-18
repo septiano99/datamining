@@ -104,9 +104,7 @@
                 }
             }
             error_log("-------------------- Probabilitas Ci Basic ----------------------------");
-            foreach ($probCi as $key => $value) {
-                error_log($key . " => " . $value);
-            }
+            print_r($probCi);
             error_log("-----------------------------------------------------------------------");
 
             $resultProdCi = array();

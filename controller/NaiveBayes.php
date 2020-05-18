@@ -104,7 +104,7 @@
                 }
             }
             error_log("-------------------- Probabilitas Ci Basic ----------------------------");
-            print_r($probCi);
+            error_log($probCi);
             error_log("-----------------------------------------------------------------------");
 
             $resultProdCi = array();

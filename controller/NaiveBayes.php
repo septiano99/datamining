@@ -96,15 +96,18 @@
             $probCi = array();
             for ($i = 0; $i < count($dataset); $i++) {
                 if (!array_key_exists($datasetClass[$i], $probCi)) {
-                    $probCi[$datasetClass[$i]] = array();
-                    array_push($probCi[$datasetClass[$i]], 1);
+                    $probCi[$datasetClass[$i]] = 1;
+//                    array_push($probCi[$datasetClass[$i]], 1);
                 } else {
-                    $plus = $probCi[$datasetClass[$i]][0] + 1;
-                    array_push($probCi[$datasetClass[$i]], $plus);
+                    $probCi[$datasetClass[$i]] = $probCi[$datasetClass[$i]] + 1;
+//                    $plus = $probCi[$datasetClass[$i]][0] + 1;
+//                    array_push($probCi[$datasetClass[$i]], $plus);
                 }
             }
             error_log("-------------------- Probabilitas Ci Basic ----------------------------");
-            error_log(" -> " . $probCi);
+            foreach ($probCi as $key => $value) {
+                error_log($key . " => " . $value);
+            }
             error_log("-----------------------------------------------------------------------");
 
             $resultProdCi = array();

@@ -15,22 +15,15 @@
             $data = array();
             array_push($datasetClass, $row[1]);
 
-            array_push($data, $row[2]);
             array_push($data, $row[4]);
             array_push($data, $row[7]);
-            array_push($data, $row[8]);
             array_push($data, $row[9]);
             array_push($data, $row[10]);
-            array_push($data, $row[11]);
-            array_push($data, $row[12]);
-            array_push($data, $row[13]);
-            array_push($data, $row[14]);
             array_push($data, $row[17]);
             array_push($data, $row[18]);
             array_push($data, $row[19]);
             array_push($data, $row[20]);
             array_push($data, $row[21]);
-            array_push($data, $row[23]);
 
             array_push($dataset, $data);
         }
@@ -40,22 +33,15 @@
         $resultTesting = pg_query($sqlTesting);
         while ($row = pg_fetch_row($resultTesting)) {
             $data = array();
-            array_push($data, $row[1]);
             array_push($data, $row[3]);
             array_push($data, $row[6]);
-            array_push($data, $row[7]);
             array_push($data, $row[8]);
             array_push($data, $row[9]);
-            array_push($data, $row[10]);
-            array_push($data, $row[11]);
-            array_push($data, $row[12]);
-            array_push($data, $row[13]);
             array_push($data, $row[16]);
             array_push($data, $row[17]);
             array_push($data, $row[18]);
             array_push($data, $row[19]);
             array_push($data, $row[20]);
-            array_push($data, $row[22]);
             array_push($testing, $data);
 
             $dataOriginal = array();

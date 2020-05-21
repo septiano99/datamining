@@ -7,6 +7,7 @@
         $datasetClass = array();
         $testing = array();
         $testingOriginal = array();
+        $noCif = array();
 
         // Get all dataset from database
         $sqlDataset = "SELECT * FROM t_dataset";
@@ -26,6 +27,7 @@
             array_push($data, $row[21]);
 
             array_push($dataset, $data);
+            array_push($noCif, $row[2]);
         }
 
         // Get all testing data from database
@@ -106,6 +108,10 @@
                         $tempData = $ED[$p];
                         $ED[$p] = $ED[$q];
                         $ED[$q] = $tempData;
+
+                        $tempNoCif = $noCif[$p];
+                        $noCif[$p] = $noCif[$q];
+                        $noCif[$q] = $tempNoCif;
                     }
                 }
             }
@@ -113,7 +119,7 @@
             // print sorting ED
             error_log("-------------------------- SORTING ED ---------------------------------");
             for ($print = 0; $print < count($ED); $print++) {
-                error_log("Index (" . $ED[$print][1] . ") = > " . $ED[$print][0] . " (" . $ED[$print][2] . ")");
+                error_log("Index (" . $noCif[$print] . ") = > " . $ED[$print][0] . " (" . $ED[$print][2] . ")");
             }
             error_log("-----------------------------------------------------------------------");
 
@@ -126,7 +132,7 @@
             // print split K value
             error_log("-------------------------- SPLIT ED -----------------------------------");
             for ($print = 0; $print < count($split); $print++) {
-                error_log("Index (" . $split[$print][1] . ") = > " . $split[$print][0] . " (" . $split[$print][2] . ")");
+                error_log("Index (" . $noCif[$print] . ") = > " . $split[$print][0] . " (" . $split[$print][2] . ")");
             }
             error_log("-----------------------------------------------------------------------");
 

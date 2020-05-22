@@ -126,6 +126,17 @@
                 $resultProbXCi[$key] = $dataColumn;
             }
 
+            error_log("----------------- Probabilitas XCi Not Multiply -----------------------");
+            foreach ($resultProbXCi as $key => $value) {
+                $pString = "";
+                for ($dc = 0; $dc < count($value); $dc++) {
+                    $pString .= $value[$dc] . ",";
+                }
+
+                error_log($key . " => " . $pString);
+            }
+            error_log("-----------------------------------------------------------------------");
+
             // Multiply probabilitas attribute
             $resultMultiplyProbXCi = array();
             foreach ($resultProbXCi as $key => $value) {

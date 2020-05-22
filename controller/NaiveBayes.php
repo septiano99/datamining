@@ -106,9 +106,11 @@
             error_log("-----------------------------------------------------------------------");
 
             // Menghitung probabilitas arrtibute (Prob XCi)
+            error_log("------------------ Probabilitas XCi Calculate ------------------------");
             $resultProbXCi = array();
             foreach ($probCi as $key => $value) {
                 $dataColumn = array();
+                $pString = "";
 
                 for ($column = 0; $column < count($dataTest); $column++) {
                     $calculate = 0;
@@ -121,10 +123,13 @@
 
                     $resultCalculate = $calculate / $value;
                     array_push($dataColumn, $resultCalculate);
+                    $pString .= $calculate . ",";
                 }
 
+                error_log($key . " => " . $pString);
                 $resultProbXCi[$key] = $dataColumn;
             }
+            error_log("-----------------------------------------------------------------------");
 
             error_log("----------------- Probabilitas XCi Not Multiply -----------------------");
             foreach ($resultProbXCi as $key => $value) {

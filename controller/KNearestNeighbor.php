@@ -91,7 +91,7 @@
                     $dataED[0] += ($dataset[$i][$count] - $testing[$index][$count]) * ($dataset[$i][$count] - $testing[$index][$count]);
                 }
 
-                sqrt($dataED[0]);
+                $dataED[0] = sqrt($dataED[0]);
                 array_push($ED, $dataED);
 
                 error_log("Index (" . $i . ") => " . $dataED[0]);

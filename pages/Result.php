@@ -249,6 +249,12 @@
                     $FN3 = $kolek3to1 + $kolek3to2 + $kolek3to4 + $kolek3to5;
                     $FN4 = $kolek4to1 + $kolek4to3 + $kolek4to2 + $kolek4to5;
                     $FN5 = $kolek5to1 + $kolek5to3 + $kolek5to4 + $kolek5to2;
+
+                    $FN1Calc = $kolek1to1 / ($kolek1to1 + $FN1);
+                    $FN2Calc = $kolek2to2 / ($kolek2to2 + $FN2);
+                    $FN3Calc = $kolek3to3 / ($kolek3to3 + $FN3);
+                    $FN4Calc = $kolek4to4 / ($kolek4to4 + $FN4);
+                    $FN5Calc = $kolek5to5 / ($kolek5to5 + $FN5);
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">
@@ -263,8 +269,8 @@
                 </table>
                 <br/>
                 <h4 style="text-align: center">Accuracy : <?php echo (($positive / count($rowResult)) * 100) . "%"; ?></h4>
-                <h4 style="text-align: center">Precision : <?php echo (($FP1Calc + $FP2Calc + $FP3Calc + $FP4Calc + $FP5Calc) / count($rowResult)) . "%"; ?></h4>
-                <h4 style="text-align: center">Recall : <?php echo ($positive / ($positive + ($FP1 + $FP2 + $FP3 + $FP4 + $FP5))) . "%"; ?></h4>
+                <h4 style="text-align: center">Precision : <?php echo ((($FP1Calc + $FP2Calc + $FP3Calc + $FP4Calc + $FP5Calc) / count($rowResult)) * 100) . "%"; ?></h4>
+                <h4 style="text-align: center">Recall : <?php echo ((($FN1Calc + $FN2Calc + $FN3Calc + $FN4Calc + $FN5Calc) / count($rowResult)) * 100) . "%"; ?></h4>
                 <br/><br/>
                 <table border="1">
                     <tr>

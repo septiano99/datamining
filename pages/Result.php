@@ -246,7 +246,7 @@
                 <?php
 
                 ?>
-                <h3 style="text-align: center">Accuracy : <?php echo ($positive / count($rowResult)); ?></h3>
+                <h3 style="text-align: center">Accuracy : <?php echo (($positive / count($rowResult)) * 100) . "%"; ?></h3>
                 <br/><br/>
                 <table border="1">
                     <tr>

@@ -81,6 +81,10 @@
                     <option value="NB">Naive Bayes</option>
                 </select>
                 <br/><br/>
+                Pilih File Pembanding:
+                <br/>
+                <input name="file" type="file" required="required" accept=".xls,.xlsx">
+                <br/><br/>
                 <input name="upload" type="submit" value="Start">
             </form>
             <br/>
@@ -88,14 +92,163 @@
                 RESULT
             </h1>
             <div style="overflow-x:auto;">
+                <?php
+                    include '../controller/Connection.php';
+                    $kolek1to1 = 0;
+                    $kolek1to2 = 0;
+                    $kolek1to3 = 0;
+                    $kolek1to4 = 0;
+                    $kolek1to5 = 0;
+
+                    $kolek2to1 = 0;
+                    $kolek2to2 = 0;
+                    $kolek2to3 = 0;
+                    $kolek2to4 = 0;
+                    $kolek2to5 = 0;
+
+                    $kolek3to1 = 0;
+                    $kolek3to2 = 0;
+                    $kolek3to3 = 0;
+                    $kolek3to4 = 0;
+                    $kolek3to5 = 0;
+
+                    $kolek4to1 = 0;
+                    $kolek4to2 = 0;
+                    $kolek4to3 = 0;
+                    $kolek4to4 = 0;
+                    $kolek4to5 = 0;
+
+                    $kolek5to1 = 0;
+                    $kolek5to2 = 0;
+                    $kolek5to3 = 0;
+                    $kolek5to4 = 0;
+                    $kolek5to5 = 0;
+
+                    $positive = 0;
+                    $negative = 0;
+
+                    $rowResult = array();
+                    $sql = "SELECT * FROM t_result";
+                    $result = pg_query($sql);
+                    while ($row = pg_fetch_row($result)) {
+                        array_push($rowResult, $row[4]);
+                    }
+
+                    $sql = "SELECT * FROM t_confusion";
+                    $result = pg_query($sql);
+                    $index = 0;
+                    while ($row = pg_fetch_row($result)) {
+                        $dataRes = $rowResult[$index];
+                        if ($row[1] == 1) {
+                            if ($dataRes[1] == 1) {
+                                $kolek1to1++;
+                                $positive++;
+                            } else if ($dataRes[1] == 2) {
+                                $kolek1to2++;
+                                $negative++;
+                            } else if ($dataRes[1] == 3) {
+                                $kolek1to3++;
+                                $negative++;
+                            } else if ($dataRes[1] == 4) {
+                                $kolek1to4++;
+                                $negative++;
+                            } else if ($dataRes[1] == 5) {
+                                $kolek1to5++;
+                                $negative++;
+                            }
+                        } else if ($row[1] == 2) {
+                            if ($dataRes[1] == 1) {
+                                $kolek2to1++;
+                                $negative++;
+                            } else if ($dataRes[1] == 2) {
+                                $kolek2to2++;
+                                $positive++;
+                            } else if ($dataRes[1] == 3) {
+                                $kolek2to3++;
+                                $negative++;
+                            } else if ($dataRes[1] == 4) {
+                                $kolek2to4++;
+                                $negative++;
+                            } else if ($dataRes[1] == 5) {
+                                $kolek2to5++;
+                                $negative++;
+                            }
+                        } else if ($row[1] == 3) {
+                            if ($dataRes[1] == 1) {
+                                $kolek3to1++;
+                                $negative++;
+                            } else if ($dataRes[1] == 2) {
+                                $kolek3to2++;
+                                $negative++;
+                            } else if ($dataRes[1] == 3) {
+                                $kolek3to3++;
+                                $positive++;
+                            } else if ($dataRes[1] == 4) {
+                                $kolek3to4++;
+                                $negative++;
+                            } else if ($dataRes[1] == 5) {
+                                $kolek3to5++;
+                                $negative++;
+                            }
+                        } else if ($row[1] == 4) {
+                            if ($dataRes[1] == 1) {
+                                $kolek4to1++;
+                                $negative++;
+                            } else if ($dataRes[1] == 2) {
+                                $kolek4to2++;
+                                $negative++;
+                            } else if ($dataRes[1] == 3) {
+                                $kolek4to3++;
+                                $negative++;
+                            } else if ($dataRes[1] == 4) {
+                                $kolek4to4++;
+                                $positive++;
+                            } else if ($dataRes[1] == 5) {
+                                $kolek4to5++;
+                                $negative++;
+                            }
+                        } else if ($row[1] == 5) {
+                            if ($dataRes[1] == 1) {
+                                $kolek5to1++;
+                                $negative++;
+                            } else if ($dataRes[1] == 2) {
+                                $kolek5to2++;
+                                $negative++;
+                            } else if ($dataRes[1] == 3) {
+                                $kolek5to3++;
+                                $negative++;
+                            } else if ($dataRes[1] == 4) {
+                                $kolek5to4++;
+                                $negative++;
+                            } else if ($dataRes[1] == 5) {
+                                $kolek5to5++;
+                                $positive++;
+                            }
+                        }
+                    }
+
+                    pg_close();
+                ?>
+                <h3 style="text-align: center">Confusion Matrix</h3>
+                <table border="1">
+                    <tr>
+                        <th><b>Clasification</b></th>
+                        <th><b>Positive</b></th>
+                        <th><b>Negative</b></th>
+                    </tr>
+                    <tr>
+                        <td><?php echo $positive; ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $negative; ?></td>
+                    </tr>
+                </table>
+                <br/><br/>
                 <table border="1">
                     <tr>
                         <th><b>Kolek</b></th>
                         <th>No CIF</th>
-                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
-                        <th>Tgl Buka</th>
-                        <th>Tgl Jatuh Tempo </th>
                         <th>Jangka Waktu/Bulan</th>
                         <th>Plafon</th>
                         <th>XAngsuran</th>
@@ -104,14 +257,11 @@
                         <th>Angsur BNG</th>
                         <th>Tunggak Pokok</th>
                         <th>Tunggak Bunga</th>
-                        <th>Tgl Tunggak Pokok</th>
-                        <th>Tgl Tunggak Bunga</th>
                         <th>XTGKP</th>
                         <th>XTGKB</th>
                         <th>HR_TGKP</th>
                         <th>HT_TGKB</th>
                         <th>Kredit Ke</th>
-                        <th>Jenis Jam</th>
                         <th>Nilai Agunan</th>
                     </tr>
                     <?php
@@ -125,10 +275,7 @@
                         <tr>
                             <td><b><?php echo $row[1]; ?></b></td>
                             <td><?php echo $row[2]; ?></td>
-                            <td><?php echo $row[3]; ?></td>
                             <td><?php echo $row[4]; ?></td>
-                            <td><?php echo $row[5]; ?></td>
-                            <td><?php echo $row[6]; ?></td>
                             <td><?php echo $row[7]; ?></td>
                             <td><?php echo $row[8]; ?></td>
                             <td><?php echo $row[9]; ?></td>
@@ -137,14 +284,11 @@
                             <td><?php echo $row[12]; ?></td>
                             <td><?php echo $row[13]; ?></td>
                             <td><?php echo $row[14]; ?></td>
-                            <td><?php echo $row[15]; ?></td>
-                            <td><?php echo $row[16]; ?></td>
                             <td><?php echo $row[17]; ?></td>
                             <td><?php echo $row[18]; ?></td>
                             <td><?php echo $row[19]; ?></td>
                             <td><?php echo $row[20]; ?></td>
                             <td><?php echo $row[21]; ?></td>
-                            <td><?php echo $row[22]; ?></td>
                             <td><?php echo $row[23]; ?></td>
                         </tr>
                         <?php

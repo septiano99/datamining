@@ -139,6 +139,7 @@
                     $index = 0;
                     while ($row = pg_fetch_row($result2)) {
                         $dataRes = $rowResult[$index];
+                        error_log("t_result : " . $dataRes ."\tt_confusion : " . $row[1]);
                         if ($row[1] == 1) {
                             if ($dataRes == 1) {
                                 $kolek1to1++;

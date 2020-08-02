@@ -230,16 +230,13 @@
                     pg_close();
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
-                <table border="1">
+                <table border="1" style="margin-left: auto; margin-right: auto;">
                     <tr>
-                        <th><b>Clasification</b></th>
                         <th><b>Positive</b></th>
                         <th><b>Negative</b></th>
                     </tr>
                     <tr>
                         <td><?php echo $positive; ?></td>
-                    </tr>
-                    <tr>
                         <td><?php echo $negative; ?></td>
                     </tr>
                 </table>

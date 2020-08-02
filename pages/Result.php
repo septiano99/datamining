@@ -129,15 +129,15 @@
 
                     $rowResult = array();
                     $sql = "SELECT * FROM t_result";
-                    $result = pg_query($sql);
-                    while ($row = pg_fetch_row($result)) {
+                    $result1 = pg_query($sql);
+                    while ($row = pg_fetch_row($result1)) {
                         array_push($rowResult, $row[4]);
                     }
 
                     $sql = "SELECT * FROM t_confusion";
-                    $result = pg_query($sql);
+                    $result2 = pg_query($sql);
                     $index = 0;
-                    while ($row = pg_fetch_row($result)) {
+                    while ($row = pg_fetch_row($result2)) {
                         $dataRes = $rowResult[$index];
                         if ($row[1] == 1) {
                             if ($dataRes[1] == 1) {
@@ -225,6 +225,8 @@
                                 $positive++;
                             }
                         }
+
+                        $index++;
                     }
 
                     pg_close();

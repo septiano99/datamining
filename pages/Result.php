@@ -131,7 +131,7 @@
                     $sql = "SELECT * FROM t_result";
                     $result1 = pg_query($sql);
                     while ($row = pg_fetch_row($result1)) {
-                        array_push($rowResult, $row[4]);
+                        array_push($rowResult, $row[1]);
                     }
 
                     $sql = "SELECT * FROM t_confusion";
@@ -140,87 +140,87 @@
                     while ($row = pg_fetch_row($result2)) {
                         $dataRes = $rowResult[$index];
                         if ($row[1] == 1) {
-                            if ($dataRes[1] == 1) {
+                            if ($dataRes == 1) {
                                 $kolek1to1++;
                                 $positive++;
-                            } else if ($dataRes[1] == 2) {
+                            } else if ($dataRes == 2) {
                                 $kolek1to2++;
                                 $negative++;
-                            } else if ($dataRes[1] == 3) {
+                            } else if ($dataRes == 3) {
                                 $kolek1to3++;
                                 $negative++;
-                            } else if ($dataRes[1] == 4) {
+                            } else if ($dataRes == 4) {
                                 $kolek1to4++;
                                 $negative++;
-                            } else if ($dataRes[1] == 5) {
+                            } else if ($dataRes == 5) {
                                 $kolek1to5++;
                                 $negative++;
                             }
                         } else if ($row[1] == 2) {
-                            if ($dataRes[1] == 1) {
+                            if ($dataRes == 1) {
                                 $kolek2to1++;
                                 $negative++;
-                            } else if ($dataRes[1] == 2) {
+                            } else if ($dataRes == 2) {
                                 $kolek2to2++;
                                 $positive++;
-                            } else if ($dataRes[1] == 3) {
+                            } else if ($dataRes == 3) {
                                 $kolek2to3++;
                                 $negative++;
-                            } else if ($dataRes[1] == 4) {
+                            } else if ($dataRes == 4) {
                                 $kolek2to4++;
                                 $negative++;
-                            } else if ($dataRes[1] == 5) {
+                            } else if ($dataRes == 5) {
                                 $kolek2to5++;
                                 $negative++;
                             }
                         } else if ($row[1] == 3) {
-                            if ($dataRes[1] == 1) {
+                            if ($dataRes == 1) {
                                 $kolek3to1++;
                                 $negative++;
-                            } else if ($dataRes[1] == 2) {
+                            } else if ($dataRes == 2) {
                                 $kolek3to2++;
                                 $negative++;
-                            } else if ($dataRes[1] == 3) {
+                            } else if ($dataRes == 3) {
                                 $kolek3to3++;
                                 $positive++;
-                            } else if ($dataRes[1] == 4) {
+                            } else if ($dataRes == 4) {
                                 $kolek3to4++;
                                 $negative++;
-                            } else if ($dataRes[1] == 5) {
+                            } else if ($dataRes == 5) {
                                 $kolek3to5++;
                                 $negative++;
                             }
                         } else if ($row[1] == 4) {
-                            if ($dataRes[1] == 1) {
+                            if ($dataRes == 1) {
                                 $kolek4to1++;
                                 $negative++;
-                            } else if ($dataRes[1] == 2) {
+                            } else if ($dataRes == 2) {
                                 $kolek4to2++;
                                 $negative++;
-                            } else if ($dataRes[1] == 3) {
+                            } else if ($dataRes == 3) {
                                 $kolek4to3++;
                                 $negative++;
-                            } else if ($dataRes[1] == 4) {
+                            } else if ($dataRes == 4) {
                                 $kolek4to4++;
                                 $positive++;
-                            } else if ($dataRes[1] == 5) {
+                            } else if ($dataRes == 5) {
                                 $kolek4to5++;
                                 $negative++;
                             }
                         } else if ($row[1] == 5) {
-                            if ($dataRes[1] == 1) {
+                            if ($dataRes == 1) {
                                 $kolek5to1++;
                                 $negative++;
-                            } else if ($dataRes[1] == 2) {
+                            } else if ($dataRes == 2) {
                                 $kolek5to2++;
                                 $negative++;
-                            } else if ($dataRes[1] == 3) {
+                            } else if ($dataRes == 3) {
                                 $kolek5to3++;
                                 $negative++;
-                            } else if ($dataRes[1] == 4) {
+                            } else if ($dataRes == 4) {
                                 $kolek5to4++;
                                 $negative++;
-                            } else if ($dataRes[1] == 5) {
+                            } else if ($dataRes == 5) {
                                 $kolek5to5++;
                                 $positive++;
                             }

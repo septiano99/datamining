@@ -231,6 +231,18 @@
                     }
 
                     pg_close();
+
+                    $FP1 = $kolek2to1 + $kolek3to1 + $kolek4to1 + $kolek5to1;
+                    $FP2 = $kolek1to2 + $kolek3to2 + $kolek4to2 + $kolek5to2;
+                    $FP3 = $kolek1to3 + $kolek2to3 + $kolek4to3 + $kolek5to3;
+                    $FP4 = $kolek1to4 + $kolek2to4 + $kolek3to4 + $kolek5to4;
+                    $FP5 = $kolek1to5 + $kolek2to5 + $kolek3to5 + $kolek4to5;
+
+                    $FN1 = $kolek1to2 + $kolek1to3 + $kolek1to4 + $kolek1to5;
+                    $FN2 = $kolek2to1 + $kolek2to3 + $kolek2to4 + $kolek2to5;
+                    $FN3 = $kolek3to1 + $kolek3to2 + $kolek3to4 + $kolek3to5;
+                    $FN4 = $kolek4to1 + $kolek4to3 + $kolek4to2 + $kolek4to5;
+                    $FN5 = $kolek5to1 + $kolek5to3 + $kolek5to4 + $kolek5to2;
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">
@@ -244,7 +256,8 @@
                     </tr>
                 </table>
                 <br/>
-                <h3 style="text-align: center">Accuracy : <?php echo (($positive / count($rowResult)) * 100) . "%"; ?></h3>
+                <h4 style="text-align: center">Accuracy : <?php echo (($positive / count($rowResult)) * 100) . "%"; ?></h4>
+                <h4 style="text-align: center">Precision : <?php echo $positive / ($positive + ($FP1 + $FP2 + $FP3 + $FP4 + $FP5)); ?></h4>
                 <br/><br/>
                 <table border="1">
                     <tr>

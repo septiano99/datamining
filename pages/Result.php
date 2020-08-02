@@ -139,7 +139,6 @@
                     $index = 0;
                     while ($row = pg_fetch_row($result2)) {
                         $dataRes = $rowResult[$index];
-                        error_log("t_result : " . $dataRes . "\tt_confusion : " .$row[1]);
                         if ($row[1] == 1) {
                             if ($dataRes == 1) {
                                 $kolek1to1++;
@@ -231,8 +230,6 @@
                     }
 
                     pg_close();
-                    error_log("Positive : " . $positive);
-                    error_log("Negative : " . $negative);
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">
@@ -245,6 +242,11 @@
                         <td><?php echo $negative; ?></td>
                     </tr>
                 </table>
+                <br/><br/>
+                <?php
+
+                ?>
+                <h3 style="text-align: center">Accuracy : <?php echo ($positive / count($rowResult)); ?></h3>
                 <br/><br/>
                 <table border="1">
                     <tr>

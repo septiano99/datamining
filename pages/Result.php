@@ -238,6 +238,12 @@
                     $FP4 = $kolek1to4 + $kolek2to4 + $kolek3to4 + $kolek5to4;
                     $FP5 = $kolek1to5 + $kolek2to5 + $kolek3to5 + $kolek4to5;
 
+                    $FP1Calc = $kolek1to1 / ($kolek1to1 + $FP1);
+                    $FP2Calc = $kolek2to2 / ($kolek2to2 + $FP2);
+                    $FP3Calc = $kolek3to3 / ($kolek3to3 + $FP3);
+                    $FP4Calc = $kolek4to4 / ($kolek4to4 + $FP4);
+                    $FP5Calc = $kolek5to5 / ($kolek5to5 + $FP5);
+
                     $FN1 = $kolek1to2 + $kolek1to3 + $kolek1to4 + $kolek1to5;
                     $FN2 = $kolek2to1 + $kolek2to3 + $kolek2to4 + $kolek2to5;
                     $FN3 = $kolek3to1 + $kolek3to2 + $kolek3to4 + $kolek3to5;
@@ -257,7 +263,8 @@
                 </table>
                 <br/>
                 <h4 style="text-align: center">Accuracy : <?php echo (($positive / count($rowResult)) * 100) . "%"; ?></h4>
-                <h4 style="text-align: center">Precision : <?php echo $positive / ($positive + ($FP1 + $FP2 + $FP3 + $FP4 + $FP5)); ?></h4>
+                <h4 style="text-align: center">Precision : <?php echo (($FP1Calc + $FP2Calc + $FP3Calc + $FP4Calc + $FP5Calc) / count($rowResult)) . "%"; ?></h4>
+                <h4 style="text-align: center">Recall : <?php echo ($positive / ($positive + ($FP1 + $FP2 + $FP3 + $FP4 + $FP5))) . "%"; ?></h4>
                 <br/><br/>
                 <table border="1">
                     <tr>

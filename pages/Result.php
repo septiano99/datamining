@@ -228,6 +228,8 @@
                     }
 
                     pg_close();
+                    error_log("Positive : " . $positive);
+                    error_log("Negative : " . $negative);
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">

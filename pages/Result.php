@@ -238,11 +238,23 @@
                     $FP4 = $kolek1to4 + $kolek2to4 + $kolek3to4 + $kolek5to4;
                     $FP5 = $kolek1to5 + $kolek2to5 + $kolek3to5 + $kolek4to5;
 
+                    error_log("FP1 : " . $FP1 . " -> " . $kolek2to1 . "+" . $kolek3to1 . "+" . $kolek4to1 . "+" . $kolek5to1);
+                    error_log("FP2 : " . $FP2 . " -> " . $kolek1to2 . "+" . $kolek3to2 . "+" . $kolek4to2 . "+" . $kolek5to2);
+                    error_log("FP3 : " . $FP3 . " -> " . $kolek1to3 . "+" . $kolek2to3 . "+" . $kolek4to3 . "+" . $kolek5to3);
+                    error_log("FP4 : " . $FP4 . " -> " . $kolek1to4 . "+" . $kolek2to4 . "+" . $kolek3to4 . "+" . $kolek5to4);
+                    error_log("FP5 : " . $FP5 . " -> " . $kolek1to5 . "+" . $kolek2to5 . "+" . $kolek3to5 . "+" . $kolek4to5);
+
                     $FP1Calc = $kolek1to1 / ($kolek1to1 + $FP1);
                     $FP2Calc = $kolek2to2 / ($kolek2to2 + $FP2);
                     $FP3Calc = $kolek3to3 / ($kolek3to3 + $FP3);
                     $FP4Calc = $kolek4to4 / ($kolek4to4 + $FP4);
                     $FP5Calc = $kolek5to5 / ($kolek5to5 + $FP5);
+
+                    error_log("FP1Calc : " . $FP1Calc . " -> " . $kolek1to1);
+                    error_log("FP2Calc : " . $FP2Calc . " -> " . $kolek2to2);
+                    error_log("FP3Calc : " . $FP3Calc . " -> " . $kolek3to3);
+                    error_log("FP4Calc : " . $FP4Calc . " -> " . $kolek4to4);
+                    error_log("FP5Calc : " . $FP5Calc . " -> " . $kolek5to5);
 
                     $FN1 = $kolek1to2 + $kolek1to3 + $kolek1to4 + $kolek1to5;
                     $FN2 = $kolek2to1 + $kolek2to3 + $kolek2to4 + $kolek2to5;
@@ -250,11 +262,23 @@
                     $FN4 = $kolek4to1 + $kolek4to3 + $kolek4to2 + $kolek4to5;
                     $FN5 = $kolek5to1 + $kolek5to3 + $kolek5to4 + $kolek5to2;
 
+                    error_log("FN1 : " . $FN1 . " -> " . $kolek1to2 . "+" . $kolek1to3 . "+" . $kolek1to4 . "+" . $kolek1to5);
+                    error_log("FN2 : " . $FN2 . " -> " . $kolek2to1 . "+" . $kolek2to3 . "+" . $kolek2to4 . "+" . $kolek2to5);
+                    error_log("FN3 : " . $FN3 . " -> " . $kolek3to1 . "+" . $kolek3to2 . "+" . $kolek3to4 . "+" . $kolek3to5);
+                    error_log("FN4 : " . $FN4 . " -> " . $kolek4to1 . "+" . $kolek4to3 . "+" . $kolek4to2 . "+" . $kolek4to5);
+                    error_log("FN5 : " . $FN5 . " -> " . $kolek5to1 . "+" . $kolek5to3 . "+" . $kolek5to4 . "+" . $kolek5to2);
+
                     $FN1Calc = $kolek1to1 / ($kolek1to1 + $FN1);
                     $FN2Calc = $kolek2to2 / ($kolek2to2 + $FN2);
                     $FN3Calc = $kolek3to3 / ($kolek3to3 + $FN3);
                     $FN4Calc = $kolek4to4 / ($kolek4to4 + $FN4);
                     $FN5Calc = $kolek5to5 / ($kolek5to5 + $FN5);
+
+                    error_log("FN1Calc : " . $FN1Calc . " -> " . $kolek1to1);
+                    error_log("FN2Calc : " . $FN2Calc . " -> " . $kolek2to2);
+                    error_log("FN3Calc : " . $FN3Calc . " -> " . $kolek3to3);
+                    error_log("FN4Calc : " . $FN4Calc . " -> " . $kolek4to4);
+                    error_log("FN5Calc : " . $FN5Calc . " -> " . $kolek5to5);
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">
@@ -274,15 +298,11 @@
                 <br/><br/>
                 <table border="1">
                     <tr>
-                        <th><b>Kolek</b></th>
                         <th>No CIF</th>
                         <th>Jenis Kelamin</th>
                         <th>Jangka Waktu/Bulan</th>
-                        <th>Plafon</th>
                         <th>XAngsuran</th>
                         <th>Angsuran Ke</th>
-                        <th>Angsur PK</th>
-                        <th>Angsur BNG</th>
                         <th>Tunggak Pokok</th>
                         <th>Tunggak Bunga</th>
                         <th>XTGKP</th>
@@ -290,7 +310,7 @@
                         <th>HR_TGKP</th>
                         <th>HT_TGKB</th>
                         <th>Kredit Ke</th>
-                        <th>Nilai Agunan</th>
+                        <th><b>Kolek</b></th>
                     </tr>
                     <?php
                     include '../controller/Connection.php';
@@ -301,15 +321,11 @@
 
                         ?>
                         <tr>
-                            <td><b><?php echo $row[1]; ?></b></td>
                             <td><?php echo $row[2]; ?></td>
                             <td><?php echo $row[4]; ?></td>
                             <td><?php echo $row[7]; ?></td>
-                            <td><?php echo $row[8]; ?></td>
                             <td><?php echo $row[9]; ?></td>
                             <td><?php echo $row[10]; ?></td>
-                            <td><?php echo $row[11]; ?></td>
-                            <td><?php echo $row[12]; ?></td>
                             <td><?php echo $row[13]; ?></td>
                             <td><?php echo $row[14]; ?></td>
                             <td><?php echo $row[17]; ?></td>
@@ -317,7 +333,7 @@
                             <td><?php echo $row[19]; ?></td>
                             <td><?php echo $row[20]; ?></td>
                             <td><?php echo $row[21]; ?></td>
-                            <td><?php echo $row[23]; ?></td>
+                            <td><b><?php echo $row[1]; ?></b></td>
                         </tr>
                         <?php
                     }

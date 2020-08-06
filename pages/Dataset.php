@@ -102,29 +102,19 @@
             <div style="overflow-x:auto;">
                 <table border="1">
                     <tr>
-                        <th>Kolek</th>
                         <th>No CIF</th>
-                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
-                        <th>Tgl Buka</th>
-                        <th>Tgl Jatuh Tempo </th>
                         <th>Jangka Waktu/Bulan</th>
-                        <th>Plafon</th>
                         <th>XAngsuran</th>
                         <th>Angsuran Ke</th>
-                        <th>Angsur PK</th>
-                        <th>Angsur BNG</th>
                         <th>Tunggak Pokok</th>
                         <th>Tunggak Bunga</th>
-                        <th>Tgl Tunggak Pokok</th>
-                        <th>Tgl Tunggak Bunga</th>
                         <th>XTGKP</th>
                         <th>XTGKB</th>
                         <th>HR_TGKP</th>
                         <th>HT_TGKB</th>
                         <th>Kredit Ke</th>
-                        <th>Jenis Jam</th>
-                        <th>Nilai Agunan</th>
+                        <th>Kolek</th>
                     </tr>
                     <?php
                     include '../controller/Connection.php';
@@ -135,29 +125,19 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $row[1]; ?></td>
                             <td><?php echo $row[2]; ?></td>
-                            <td><?php echo $row[3]; ?></td>
                             <td><?php echo $row[4]; ?></td>
-                            <td><?php echo $row[5]; ?></td>
-                            <td><?php echo $row[6]; ?></td>
                             <td><?php echo $row[7]; ?></td>
-                            <td><?php echo $row[8]; ?></td>
                             <td><?php echo $row[9]; ?></td>
                             <td><?php echo $row[10]; ?></td>
-                            <td><?php echo $row[11]; ?></td>
-                            <td><?php echo $row[12]; ?></td>
                             <td><?php echo $row[13]; ?></td>
                             <td><?php echo $row[14]; ?></td>
-                            <td><?php echo $row[15]; ?></td>
-                            <td><?php echo $row[16]; ?></td>
                             <td><?php echo $row[17]; ?></td>
                             <td><?php echo $row[18]; ?></td>
                             <td><?php echo $row[19]; ?></td>
                             <td><?php echo $row[20]; ?></td>
                             <td><?php echo $row[21]; ?></td>
-                            <td><?php echo $row[22]; ?></td>
-                            <td><?php echo $row[23]; ?></td>
+                            <td><?php echo $row[1]; ?></td>
                         </tr>
                         <?php
                     }

@@ -287,8 +287,8 @@
                         <th><b>Negative</b></th>
                     </tr>
                     <tr>
-                        <td><?php echo $positive; ?></td>
-                        <td><?php echo $negative; ?></td>
+                        <td style="text-align: center"><?php echo $positive; ?></td>
+                        <td style="text-align: center"><?php echo $negative; ?></td>
                     </tr>
                 </table>
                 <br/>

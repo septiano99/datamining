@@ -279,6 +279,9 @@
                     error_log("FN3Calc : " . $FN3Calc . " -> " . $kolek3to3);
                     error_log("FN4Calc : " . $FN4Calc . " -> " . $kolek4to4);
                     error_log("FN5Calc : " . $FN5Calc . " -> " . $kolek5to5);
+
+                    error_log("Presisi : ". ((($FP1Calc + $FP2Calc + $FP3Calc + $FP4Calc + $FP5Calc) / count($rowResult)) * 100) . " => " . count($rowResult));
+                    error_log("Recall : ". ((($FN1Calc + $FN2Calc + $FN3Calc + $FN4Calc + $FN5Calc) / count($rowResult)) * 100) . " => " . count($rowResult));
                 ?>
                 <h3 style="text-align: center">Confusion Matrix</h3>
                 <table border="1" style="margin-left: auto; margin-right: auto;">

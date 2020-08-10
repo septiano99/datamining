@@ -321,19 +321,19 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $row[2]; ?></td>
-                            <td><?php echo $row[4]; ?></td>
-                            <td><?php echo $row[7]; ?></td>
-                            <td><?php echo $row[9]; ?></td>
-                            <td><?php echo $row[10]; ?></td>
-                            <td><?php echo $row[13]; ?></td>
-                            <td><?php echo $row[14]; ?></td>
-                            <td><?php echo $row[17]; ?></td>
-                            <td><?php echo $row[18]; ?></td>
-                            <td><?php echo $row[19]; ?></td>
-                            <td><?php echo $row[20]; ?></td>
-                            <td><?php echo $row[21]; ?></td>
-                            <td><b><?php echo $row[1]; ?></b></td>
+                            <td style="text-align: center"><?php echo $row[2]; ?></td>
+                            <td style="text-align: center"><?php echo $row[4]; ?></td>
+                            <td style="text-align: center"><?php echo $row[7]; ?></td>
+                            <td style="text-align: center"><?php echo $row[9]; ?></td>
+                            <td style="text-align: center"><?php echo $row[10]; ?></td>
+                            <td style="text-align: center"><?php echo $row[13]; ?></td>
+                            <td style="text-align: center"><?php echo $row[14]; ?></td>
+                            <td style="text-align: center"><?php echo $row[17]; ?></td>
+                            <td style="text-align: center"><?php echo $row[18]; ?></td>
+                            <td style="text-align: center"><?php echo $row[19]; ?></td>
+                            <td style="text-align: center"><?php echo $row[20]; ?></td>
+                            <td style="text-align: center"><?php echo $row[21]; ?></td>
+                            <td style="text-align: center"><b><?php echo $row[1]; ?></b></td>
                         </tr>
                         <?php
                     }

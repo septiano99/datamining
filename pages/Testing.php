@@ -109,18 +109,18 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $row[1]; ?></td>
-                            <td><?php echo $row[3]; ?></td>
-                            <td><?php echo $row[6]; ?></td>
-                            <td><?php echo $row[8]; ?></td>
-                            <td><?php echo $row[9]; ?></td>
-                            <td><?php echo $row[12]; ?></td>
-                            <td><?php echo $row[13]; ?></td>
-                            <td><?php echo $row[16]; ?></td>
-                            <td><?php echo $row[17]; ?></td>
-                            <td><?php echo $row[18]; ?></td>
-                            <td><?php echo $row[19]; ?></td>
-                            <td><?php echo $row[20]; ?></td>
+                            <td style="text-align: center"><?php echo $row[1]; ?></td>
+                            <td style="text-align: center"><?php echo $row[3]; ?></td>
+                            <td style="text-align: center"><?php echo $row[6]; ?></td>
+                            <td style="text-align: center"><?php echo $row[8]; ?></td>
+                            <td style="text-align: center"><?php echo $row[9]; ?></td>
+                            <td style="text-align: center"><?php echo $row[12]; ?></td>
+                            <td style="text-align: center"><?php echo $row[13]; ?></td>
+                            <td style="text-align: center"><?php echo $row[16]; ?></td>
+                            <td style="text-align: center"><?php echo $row[17]; ?></td>
+                            <td style="text-align: center"><?php echo $row[18]; ?></td>
+                            <td style="text-align: center"><?php echo $row[19]; ?></td>
+                            <td style="text-align: center"><?php echo $row[20]; ?></td>
                         </tr>
                         <?php
                     }
